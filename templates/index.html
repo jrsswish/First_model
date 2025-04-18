@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Model</title>
+</head>
+<body>
+    <h1>Are you likely to have suicide thoughts?</h1>
+
+    <form action="/predict" method="post">
+        <label for="degree">Degree:</label>
+        <select name="degree" required size="5" style="width: 200px;">
+            <option value="B.Pharm">B.Pharm</option>
+            <option value="BSc">BSc</option>
+            <option value="BA">BA</option>
+            <option value="BCA">BCA</option>
+            <option value="M.Tech">M.Tech</option>
+            <option value="PhD">PhD</option>
+            <option value="Class 12">Class 12</option>
+            <option value="B.Ed">B.Ed</option>
+            <option value="LLB">LLB</option>
+            <option value="BE">BE</option>
+            <option value="M.Ed">M.Ed</option>
+            <option value="MSc">MSc</option>
+            <option value="BHM">BHM</option>
+            <option value="M.Pharm">M.Pharm</option>
+            <option value="MCA">MCA</option>
+            <option value="MA">MA</option>
+            <option value="B.Com">B.Com</option>
+            <option value="MD">MD</option>
+            <option value="MBA">MBA</option>
+            <option value="MBBS">MBBS</option>
+            <option value="M.Com">M.Com</option>
+            <option value="B.Arch">B.Arch</option>
+            <option value="LLM">LLM</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="BBA">BBA</option>
+            <option value="ME">ME</option>
+            <option value="MHM">MHM</option>
+            <option value="Others">Others</option>
+        </select><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" min="10" max="100" required><br><br>
+
+        <input type="submit" value="Check">
+    </form>
+
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
